@@ -1,11 +1,12 @@
 SCENE=room
 STYLE=14
 style_idxs=14  # starry
-class_idxs=72 # tv
+class_idxs=67 # 72: tv, 67: dining table
+text_prompt="table"
 
 data_type=llff
 ckpt_svox2=ckpt_svox2/${data_type}/${SCENE}
-ckpt_arf=ckpt_arf/${data_type}/${SCENE}_${STYLE}
+ckpt_arf=ckpt_arf/${data_type}/${SCENE}_${STYLE}_${text_prompt}
 data_dir=../data/${data_type}/${SCENE}
 style_img=../data/styles/${STYLE}.jpg
 
@@ -20,7 +21,7 @@ python opt_style.py -t ${ckpt_arf} ${data_dir} \
                 --style ${style_img} \
                 --style_idxs "${style_idxs[@]}" \
                 --class_idxs "${class_idxs[@]}" \
-                --text_prompt "tv"\
+                --text_prompt "${text_prompt}" \
                 --mse_num_epoches 2 --nnfm_num_epoches 10 \
                 --content_weight 1e-3
 

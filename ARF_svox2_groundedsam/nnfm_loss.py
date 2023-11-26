@@ -234,6 +234,7 @@ class NNFMLoss(torch.nn.Module):
 
         # Tested with Fig save
         return masks_merged
+    
     def forward(
         self,
         outputs,

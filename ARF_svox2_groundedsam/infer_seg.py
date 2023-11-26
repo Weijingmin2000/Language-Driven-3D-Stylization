@@ -491,12 +491,15 @@ def inference_withgroundedsam(im, groundingdino_model, sam_predictor, class_id ,
     transformed_boxes = sam_predictor.transform.apply_boxes_torch(boxes_xyxy, image_source.shape[:2]).cuda()
 
     try:
-        masks, _, _ = sam_predictor.predict_torch(
+        masks, score, _ = sam_predictor.predict_torch(
                     point_coords = None,
                     point_labels = None,
                     boxes = transformed_boxes,
                     multimask_output = False,
                 )
+        _, best_mask_index = torch.max(score, dim=1)
+        best_mask = masks[0, best_mask_index[0]]
+        masks = best_mask.unsqueeze(0).unsqueeze(0)
     except RuntimeError as e:
         # print(f"No segmented target {text_prompt} when processing {image_path}:\n {e}")
         # create a full false mask
