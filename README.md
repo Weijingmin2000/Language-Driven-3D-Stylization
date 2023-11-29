@@ -2,14 +2,20 @@
 
 A language-guided 3D stylization method combined with ARF and GroundedSAM.
 
-Install the GroundedSAM environment by following the instructions in [GroundedSAM](https://github.com/IDEA-Research/Grounded-Segment-Anything).
+This work mainly builds upon [ARF](https://github.com/IDEA-Research/Grounded-Segment-Anything) and [GroundedSAM](https://github.com/Kai-46/ARF-svox2). Please refer to their original repositories for more details.
 
-Then install the ARF environment by [ARF](https://github.com/Weijingmin2000/Language-Driven-3D-Stylization/blob/main/ARF_svox2_groundedsam/install.sh), and prepare the [data](https://github.com/Weijingmin2000/Language-Driven-3D-Stylization/blob/main/ARF_svox2_groundedsam/download_data.sh).
+## Quick start
+Install the GroundedSAM environment by following the instructions in [GroundedSAM](https://github.com/IDEA-Research/Grounded-Segment-Anything). Then
+
+```shell
+cd ARF_svox2_groundedsam/opt
+```
+
+Then install the ARF environment by following [this script](https://github.com/Weijingmin2000/Language-Driven-3D-Stylization/blob/main/ARF_svox2_groundedsam/install.sh) or the original [ARF](https://github.com/Kai-46/ARF-svox2), and prepare the [data](https://github.com/Weijingmin2000/Language-Driven-3D-Stylization/blob/main/ARF_svox2_groundedsam/download_data.sh).
 
 Run the following command to generate the stylized 3D scene:
 
 ```shell
-cd ARF_svox2_groundedsam/opt
 bash try_llff_groundedsam.sh
 ```
 
