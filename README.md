@@ -1,2 +1,3 @@
-# Stylized-NeRF
-A language-guided NeRF for stylization.
+# Language-Driven-3D-Stylization
+
+A language-guided 3D stylization method combined with ARF and GroundedSAM.
