@@ -1,12 +1,14 @@
-SCENE=room
-STYLE=14
-style_idxs=14  # starry
-class_idxs=67 # 72: tv, 67: dining table
-text_prompt="table"
+SCENE=$1
+STYLE=$2
+echo "Enter the Style image Indexes you want for your respective objects (space separated)" # 14: starry
+read -a style_idxs
+
+echo "Enter the COCO object Indexes you want to be styled (space separated)" # 72: TV
+read -a class_idxs
 
 data_type=llff
 ckpt_svox2=ckpt_svox2/${data_type}/${SCENE}
-ckpt_arf=ckpt_arf/${data_type}/${SCENE}_${STYLE}_${text_prompt}
+ckpt_arf=ckpt_arf/${data_type}/${SCENE}_${STYLE}
 data_dir=../data/${data_type}/${SCENE}
 style_img=../data/styles/${STYLE}.jpg
 
@@ -21,10 +23,8 @@ python opt_style.py -t ${ckpt_arf} ${data_dir} \
                 --style ${style_img} \
                 --style_idxs "${style_idxs[@]}" \
                 --class_idxs "${class_idxs[@]}" \
-                --text_prompt "${text_prompt}" \
                 --mse_num_epoches 2 --nnfm_num_epoches 10 \
                 --content_weight 1e-3
-
 
 python render_imgs.py ${ckpt_arf}/ckpt.npz ${data_dir} \
                     --render_path --no_imsave
