@@ -23,4 +23,4 @@ You could directly change the text prompt, style image, and scene name in the sc
 
 ![pipeline](pipeline/pipeline.jpg)
 
-Given a text prompt 'tv', a style image (Starry Night), and views by pre-trained radiance field, our method generates a stylized 3D scene.
+Given a text prompt 'tv', a style image (Starry Night), and views by pre-trained radiance field, our method generates a stylized 3D scene. See some of our results in `/results`.
