@@ -1,1 +1,0 @@
-python optimize.py --style-image ./assets/starry.jpg --input-mesh ./assets/spot.obj --output-path ./output --batch-size 4 --iteration 1500 --log-iteration 100 --texture-res 1024 --render-res 512 --scale 1.5 
