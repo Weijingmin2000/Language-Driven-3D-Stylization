@@ -1,6 +1,6 @@
 # Language-Driven-3D-Stylization
 
-A language-guided 3D stylization method combined with ARF and GroundedSAM.
+A language-driven 3D stylization method combined with ARF and GroundedSAM.
 
 This work mainly builds upon [GroundedSAM](https://github.com/IDEA-Research/Grounded-Segment-Anything) and [ARF](https://github.com/Kai-46/ARF-svox2). Please refer to their original repositories for more details.
 
@@ -24,4 +24,4 @@ You could directly change the text prompt, style image, and scene name in the sc
 
 ![pipeline](pipeline/pipeline.jpg)
 
-Given a text prompt `tv`, a style image (Starry Night), and views by pre-trained radiance field, our method generates a stylized 3D scene. See some of our results in `/results`.
+Given a text prompt `tv`, a style image (Starry Night), and views by pre-trained radiance field, our method generates a stylized 3D scene. See some of our results in `/results`. You could also find more results in our [Gdrive](https://drive.google.com/drive/u/0/folders/1heSA8rn7lja0EiPGAO4rTn4SEMr7hcG1).
